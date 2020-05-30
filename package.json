@@ -1,0 +1,29 @@
+{
+  "name": "keep-mounted",
+  "version": "1.0.0",
+  "description": "Will not unmount your component unnecessarily.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuaalpuerto/keep-mounted.git"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0"
+  },
+  "keywords": [
+    "react",
+    "toggle"
+  ],
+  "author": {
+    "name": "Joshua C Alpueto",
+    "email": "joshuacalpuerto@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuaalpuerto/keep-mounted/issues"
+  },
+  "homepage": "https://github.com/joshuaalpuerto/keep-mounted#readme"
+}
