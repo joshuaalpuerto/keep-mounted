@@ -1,13 +1,17 @@
-import React from 'react';
+import React from "react";
+import dequal from "dequal";
 
 const isEmptyChildren = (children) =>
   Array.isArray(children) ? children.every((c) => !c) : !children;
 
-const KeepMounted = ({ as: As = 'div', children, ...props }) => {
+const KeepMounted = ({ as: As = "div", children, ...props }) => {
   const emptyChildren = isEmptyChildren(children);
 
   if (!emptyChildren) {
-    if (!KeepMounted.cache.has(children.key)) {
+    const prevProps = KeepMounted.cache.get(children.key)?.props;
+    const nextProps = children.props;
+
+    if (!KeepMounted.cache.has(children.key) || !dequal(prevProps, nextProps)) {
       KeepMounted.cache.set(children.key, children);
     }
   }
@@ -15,7 +19,7 @@ const KeepMounted = ({ as: As = 'div', children, ...props }) => {
   return [...KeepMounted.cache.values()].map((child) => (
     <As
       key={child.key}
-      style={{ display: child.key !== children.key ? 'none' : null }}
+      style={{ display: child.key !== children.key ? "none" : null }}
       {...props}
     >
       {child}
