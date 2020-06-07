@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/joshuaalpuerto/keep-mounted/issues"
   },
-  "homepage": "https://github.com/joshuaalpuerto/keep-mounted#readme"
+  "homepage": "https://github.com/joshuaalpuerto/keep-mounted#readme",
+  "dependencies": {
+    "dequal": "1.0.0"
+  }
 }
